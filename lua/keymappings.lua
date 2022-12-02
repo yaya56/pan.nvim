@@ -3,7 +3,6 @@ vim.g.mapleader=' '
 vim.g.maplocalleader=' '
 
 
-
 local opts = {noremap=true,silent=true}
 
 
@@ -20,7 +19,6 @@ map('n','<leader>pi','<cmd>:PackerInstall<Cr>',opts)
 
 -- NvimTree
 map('n','<leader><Bs>','<cmd>:NvimTreeToggle<Cr>',opts)
-
 
 
 -- Telescope

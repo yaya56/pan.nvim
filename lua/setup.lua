@@ -1,6 +1,5 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
-
 -- set termguicolors to enable highlight groups
 vim.opt.termguicolors = true
 
@@ -99,10 +98,10 @@ db.custom_center = {
 	shortcut = 'SPC f d'},
 }
 
-
-vim.api.nvim_create_autocmd('User',{
-	pattern='DBSessionLoadPre',
-	callback=function ()
-		pcall(vim.cmd,':NvimTreeOpen')
-	end
-})
+--
+-- vim.api.nvim_create_autocmd('User',{
+-- 	pattern='DBSessionLoadPre',
+-- 	callback=function ()
+-- 		pcall(vim.cmd,':NvimTreeOpen')
+-- 	end
+-- })
