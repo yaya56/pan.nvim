@@ -1,6 +1,6 @@
 require('plugins')
 require('base')
-require('coc')
+-- require('coc')
 require('setup')
 
 require('keymappings')

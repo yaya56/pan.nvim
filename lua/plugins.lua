@@ -36,7 +36,7 @@ return require('packer').startup({function(use)
   -- Post-install/update hook with neovim command
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-
+  use { "williamboman/mason.nvim" }
 
   use {
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
@@ -54,8 +54,9 @@ return require('packer').startup({function(use)
     config = function() require('gitsigns').setup() end
   }
 
-
-  use {'neoclide/coc.nvim', branch = 'release'}
+use 'neovim/nvim-lspconfig'
+  -- use {'neoclide/coc.nvim', branch = 'release'}
+  use {'mfussenegger/nvim-dap'}
   -- You can alias plugin names
   use {'dracula/vim', as = 'dracula'}
 
@@ -84,6 +85,30 @@ return require('packer').startup({function(use)
       require("auto-save").setup {}
     end,
   })
+  use {
+    "windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+  }
+
+  -- -- Packer
+  -- use({
+  --   "folke/noice.nvim",
+  --   config = function()
+  --     require("noice").setup({
+  --       -- add any options here
+  --     })
+  --   end,
+  --   requires = {
+  --     -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+  --     "MunifTanjim/nui.nvim",
+  --     -- OPTIONAL:
+  --     --   `nvim-notify` is only needed, if you want to use the notification view.
+  --     --   If not available, we use `mini` as the fallback
+  --     "rcarriga/nvim-notify",
+  --   }
+  -- })
+  --
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

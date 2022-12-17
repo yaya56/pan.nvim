@@ -36,7 +36,12 @@ require('telescope').setup {
       case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
                                        -- the default case_mode is "smart_case"
     }
-  }
+  },
+  -- pickers = {
+  --   find_files = {
+  --     theme = 'dropdown'
+  --   }
+  -- }
 }
 -- To get fzf loaded and working with telescope, you need to call
 -- load_extension, somewhere after setup function:
@@ -46,11 +51,22 @@ require('telescope').load_extension('fzf')
 
 require('lualine').setup({
 	options = {
-		theme='dracula'
-	}
+		theme='dracula',
+		-- theme='gruvbox',
+    disabled_filetypes = {     -- Filetypes to disable lualine for.
+      statusline = {'NvimTree'},       -- only ignores the ft for statusline.
+      winbar = {'NvimTree'},           -- only ignores the ft for winbar.
+  }
+	},
+  sections = {
+    lualine_c = {{'filename',path=1}}
+  }
 })
 
 
 require('Comment').setup()
 
 require'alpha'.setup(require'alpha.themes.startify'.config)
+
+require('mason').setup()
+

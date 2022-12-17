@@ -22,6 +22,8 @@ local map = vim.api.nvim_set_keymap
 -- Packer
 map('n','<leader>ps','<cmd>:PackerSync<Cr>',opts)
 map('n','<leader>pi','<cmd>:PackerInstall<Cr>',opts)
+-- map('n','<leader><leader>q','<cmd>:q<Cr>',opts)
+-- map('n','<leader><leader>qq','<cmd>:qa<Cr>',opts)
 
 
 if vim.g.vscode then
